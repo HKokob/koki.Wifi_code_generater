@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linking the external CSS file -->
+</head>
+<body>
+
+    <!-- Left Container: Form Inputs -->
+    <div class="form-container">
+        <h2>WiFi QR Code Generator</h2>
+        <form id="wifiForm">
+            <div class="inputs">
+                <label for="ssid">Network Name (SSID):</label>
+                <input id="ssid" name="ssid" placeholder="Enter WiFi network name" required>
+                <label for="password">Password:</label>
+                <input id="password" name="password" type="password" placeholder="Enter WiFi password" required>
+            </div>
+            <button type="submit">Generate QR Code</button>
+        </form>
+    </div>
+
+    <!-- Right Container: QR Code and Details -->
+    <div id="qrContainer" style="display:none;">
+        <h3>Scan to Connect</h3>
+        <div style="display: flex; align-items: center;">
+            <img id="qrCode" width="200" src="" alt="WiFi QR Code">
+            <div class="wifi-details" style="margin-left: 20px;">
+                <p><strong>Network Name:</strong> <span id="displaySSID"></span></p>
+                <p><strong>Password:</strong> <span id="displayPassword"></span></p>
+            </div>
+        </div>
+        <button id="downloadButton">Download WiFi Card</button>
+    </div>
+
+    <!-- jsPDF Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script> <!-- Linking the external JS file -->
+
+</body>
+</html>
